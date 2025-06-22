@@ -3,19 +3,19 @@
 This is a simple real-time face detection application built using **Python** and **OpenCV**.  
 It uses the webcam to detect human faces and draws a green bounding box around them using the **Haar Cascade Classifier**.
 
-## 📸 Features
+## Features
 
 - Detects faces in a live video stream from your webcam
 - Draws bounding boxes around each face
 - Counts the number of detected faces and displays it
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 - Python 3.x
 - OpenCV (`cv2`)
 - Haar Cascade XML file (pre-trained model)
 
-## 📁 Project Structure
+## Project Structure
 
     FaceDetectionApp/
     │
@@ -23,7 +23,7 @@ It uses the webcam to detect human faces and draws a green bounding box around t
     ├── haarcascade_frontalface_default.xml # Haar cascade file (optional if using cv2.data)
     └── README.md # Project documentation
 
-## 🚀 How to Run the App
+## How to Run the App
 
 ### 1. Clone the Repository or Download Files
 
@@ -68,4 +68,4 @@ Real-time object detection
 Haar Cascade Classifier by Viola & Jones (2001)
 OpenCV community
 
-📜 License
+License

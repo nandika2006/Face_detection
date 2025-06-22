@@ -43,7 +43,7 @@ It uses the webcam to detect human faces and draws a green bounding box around t
   Press the q key in the webcam window to stop the app.
   or else press ctrl+c
   
-  # How It Works (Simple Terms)
+## How It Works (Simple Terms)
   - The webcam captures live video.
 
   - Each frame is turned to black & white (grayscale).
@@ -54,7 +54,7 @@ It uses the webcam to detect human faces and draws a green bounding box around t
 
   - If it passes all checks, it detects a face and draws a box.
 
-# Learning Goals
+## Learning Goals
 Real-time object detection
 
 - Understanding Haar cascades and feature matching

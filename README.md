@@ -1,71 +1,55 @@
-# Face Detection App 
+# Face Detection using Haar Cascades with OpenCV and Matplotlib
 
-This is a simple real-time face detection application built using **Python** and **OpenCV**.  
-It uses the webcam to detect human faces and draws a green bounding box around them using the **Haar Cascade Classifier**.
+## Aim
 
-## Features
+To write a Python program using OpenCV to perform the following image manipulations:  
+i) Extract ROI from an image.  
+ii) Perform face detection using Haar Cascades in static images.  
+iii) Perform eye detection in images.  
+iv) Perform face detection with label in real-time video from webcam.
 
-- Detects faces in a live video stream from your webcam
-- Draws bounding boxes around each face
-- Counts the number of detected faces and displays it
+## Software Required
 
-## Tools & Technologies
+- Anaconda - Python 3.7 or above  
+- OpenCV library (`opencv-python`)  
+- Matplotlib library (`matplotlib`)  
+- Jupyter Notebook or any Python IDE (e.g., VS Code, PyCharm)
 
-- Python 3.x
-- OpenCV (`cv2`)
-- Haar Cascade XML file (pre-trained model)
+## Algorithm
 
-## Project Structure
+### I) Load and Display Images
 
-    FaceDetectionApp/
-    │
-    ├── face_detector.py # Main Python script
-    ├── haarcascade_frontalface_default.xml # Haar cascade file (optional if using cv2.data)
-    └── README.md # Project documentation
+- Step 1: Import necessary packages: `numpy`, `cv2`, `matplotlib.pyplot`  
+- Step 2: Load grayscale images using `cv2.imread()` with flag `0`  
+- Step 3: Display images using `plt.imshow()` with `cmap='gray'`
 
-## How to Run the App
+### II) Load Haar Cascade Classifiers
 
-### 1. Clone the Repository or Download Files
+- Step 1: Load face and eye cascade XML files 
+### III) Perform Face Detection in Images
 
-    git clone https://github.com/your-username/FaceDetectionApp.git
-    cd FaceDetectionApp
-  
-  2. Install Dependencies
-  Make sure you have Python installed, then run:
+- Step 1: Define a function `detect_face()` that copies the input image  
+- Step 2: Use `face_cascade.detectMultiScale()` to detect faces  
+- Step 3: Draw white rectangles around detected faces with thickness 10  
+- Step 4: Return the processed image with rectangles  
 
-    pip install opencv-python
-  
-  4. Run the App
-  
-    python face_detector.py
-  
-  4. Quit the App
-  Press the q key in the webcam window to stop the app.
-  or else press ctrl+c
-  
-## How It Works (Simple Terms)
-  - The webcam captures live video.
+### IV) Perform Eye Detection in Images
 
-  - Each frame is turned to black & white (grayscale).
+- Step 1: Define a function `detect_eyes()` that copies the input image  
+- Step 2: Use `eye_cascade.detectMultiScale()` to detect eyes  
+- Step 3: Draw white rectangles around detected eyes with thickness 10  
+- Step 4: Return the processed image with rectangles  
 
-  - OpenCV checks for specific patterns (like eye and nose areas).
+### V) Display Detection Results on Images
 
-  - It runs the image through stages of filters (called a “cascade”).
+- Step 1: Call `detect_face()` or `detect_eyes()` on loaded images  
+- Step 2: Use `plt.imshow()` with `cmap='gray'` to display images with detected regions highlighted  
 
-  - If it passes all checks, it detects a face and draws a box.
+### VI) Perform Face Detection on Real-Time Webcam Video
 
-## Learning Goals
-Real-time object detection
-
-- Understanding Haar cascades and feature matching
-
-- Working with webcam input in Python
-
-- Basic OpenCV functions (frame reading, image processing, drawing)
-
-
-# Credits
-Haar Cascade Classifier by Viola & Jones (2001)
-OpenCV community
-
-License
+- Step 1: Capture video from webcam using `cv2.VideoCapture(0)`  
+- Step 2: Loop to continuously read frames from webcam  
+- Step 3: Apply `detect_face()` function on each frame  
+- Step 4: Display the video frame with rectangles around detected faces  
+- Step 5: Exit loop and close windows when ESC key (key code 27) is pressed  
+- Step 6: Release video capture and destroy all OpenCV windows  
